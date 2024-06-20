@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <p>Portfolio</p>
+            </div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="grid-container">
+                <img src="images\web-development-8734249_640.webp" alt="Image" class="image1">
+            </div>
+
+            <div class="rightsection">
+                <div>Hi, I am <span class="orange">Kanak</span></div>
+                <div>and I am a Passionate</div>
+                <div><span id="element"></span></div>
+            </div>
+        </section>
+
+        <!-- <------ABOUT---->
+        <section id="About">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images\photo_123.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub_t">About Me</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, vero iusto natus ea
+                            laudantium adipisci sint tenetur voluptatum accusantium in! Repudiandae corporis voluptatum,
+                            quo perferendis quidem alias magnam, nostrum ratione reprehenderit obcaecati ex aut. Quos id
+                            suscipit distinctio tempora, unde, enim sequi voluptates similique possimus sunt nobis
+                            dolorem vel molestias?</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills',event)">Skills</p>
+                            <p class="tab-links" onclick="opentab('projects',event)">Projects</p>
+                            <p class="tab-links" onclick="opentab('education',event)">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li class="mainlist1" onclick="Toggleselector(this)"><span>Programming languages</span>
+                                    <ul class="sublist">
+                                        <li>Python</li>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="mainlist2" onclick="Toggleselector(this)"><span>Frameworks</span>
+                                    <ul class="sublist">
+                                        <li>Django</li>
+                                        <li>Flask</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="projects">
+                            <ul>
+                                <li id="prog"> <a href="https://www.amazon.com/"></a>Amazone clone</li>
+                            </ul>
+
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2023</span><br>B.E from Government College Bharuch</li>
+                                <li><span>2023</span><br>Bs in DataScience and Applications from IIT Madras</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- -------contact----- -->
+        <footer>
+            <div id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-left">
+                            <h1 class="subtitle">Contact Me</h1>
+                            <p><i class="fa-solid fa-paper-plane"></i>23f252005464@ds.study.iitm.ac.in</p>
+                            <p><i class="fa-solid fa-phone"></i>+917859816402</p>
+                            <div class="social-icons">
+                                <a href="https://www.instagram.com/accounts/login/?hl=en"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </footer>
+
+
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Webdeveloper', 'Graphic Designer', 'Cybersecurity Analyst'],
+            typeSpeed: 50,
+        });
+    </script>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname, event) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        function Toggleselector(element) {
+            var sublist = element.querySelector('.sublist');
+            sublist.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

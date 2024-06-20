@@ -1,0 +1,303 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+body{
+    background-color: rgb(19, 18, 18);
+    color: white;
+    font-style:italic;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items:center ;
+    height: 60px;
+    background-color: black;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    list-style: none;
+    margin: 60px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #ff004f;
+  position:absolute;
+  left:0;
+  bottom:0px;
+}
+nav ul li a:hover::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #ff004f;
+    position:absolute;
+    left:0;
+    bottom:0px;
+  }
+
+.left{
+    font-size: 2rem;
+}
+
+nav ul li a:hover{
+    color:rgb(174, 183, 179) ;
+}
+.firstsection{
+    display: flex;
+    justify-content: space-around;
+    margin: 10% 0;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-template-areas:
+      "image1 image1 image1 image1"
+      
+  }
+.image1 {
+    grid-area: image1;
+  }
+  
+img {
+    max-width: 100%;
+    height: auto;
+  }  
+
+
+.rightsection {
+    margin: 70px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 3.5rem;
+    line-height: 1.2;
+
+}
+.orange{
+   color: rgb(0, 255, 170);
+}
+#element{
+    color:rgb(0, 255, 170);
+}
+
+/* ---ABOUT--- */
+.row{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    height:600px;
+    width: 500px;
+    border-radius: 23px;
+    margin-left: 10%;
+    opacity: 0.5;
+}
+
+    
+.about-col-2{
+    flex-basis: 50%;
+}
+
+.About{
+    padding: 80px 0;
+    color: #c1c3bc;
+
+}
+
+.sub_t{
+    font-size: 50px;
+    margin-top: -2.5rem ;
+    font-weight: 400;
+    color: #fff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+    color: greenyellow;
+}
+
+.tab-links{
+     margin-right: 50px;
+     font-size: 30px;
+     font-weight: 500;
+     cursor:pointer;
+     position: relative;
+
+}
+
+.tab-links::after{
+    content:'';
+    width:0;
+    height: 3px;
+    background-color: #ff004f;
+    position: absolute;
+    left:0;
+    bottom:8px;
+    transition: 0.5s;
+
+}
+.tab-links.active-link::after{
+    width:50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 5px 0;
+}
+
+.tab-contents ul li span{
+    color: #ff004f;
+    font-size: 20px;
+    
+}
+
+#prog{
+    color:rgb(192, 225, 214);
+    font-size: 30px;
+    cursor: pointer;
+}
+.tab-contents{
+    display: none;
+
+}
+.tab-contents.active-tab{
+    display: block;
+}
+.mainlist1{
+    cursor: pointer;
+    color: aqua;
+}
+.mainlist1::before{
+    content: "\1F449";
+    display: inline-block;
+    margin-right: 5px;
+
+   
+}
+.mainlist2{
+    cursor: pointer;
+    list-style:circle;
+    color: aqua;
+}
+.mainlist2::before{
+    content: "\1F449";
+    display: inline-block;
+    margin-right: 5px;
+   
+}
+.sublist {
+    display: none; /* Hide sublist by default */
+    margin-left: 20px; /* Indent sublist */
+    
+  }
+
+.sublist.show {
+    display: list-item;
+    margin-left: 60px;
+     /* Show sublist when .show class is added */
+    
+  }
+
+
+@media (max-width: 768px) {
+    nav .right ul {
+        flex-direction: column;
+    }
+
+    nav .right ul li {
+        margin: 10px 0;
+    }
+
+    .firstsection {
+        flex-direction: column;
+    }
+
+    .rightsection {
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+
+    .about-col-1, .about-col-2 {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    nav .left {
+        margin-bottom: 10px;
+    }
+
+    .rightsection {
+        font-size: 1.2rem;
+    }
+
+    .sub_t {
+        font-size: 30px;
+    }
+}
+/* -----contact-- */
+footer{
+  background-color: rgba(28, 41, 37, 0.285);
+  padding :20px 0; 
+   
+}
+.contact-left{
+     font-size: 20px;
+     font-weight: 300;
+     font-style: bold;
+}
+#contact{
+    margin-right: 70%;
+}
+.social-icons{
+    margin-top: 10px;
+}
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline block;
+    transition: transform 0.2s;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.social-icons a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 10px;
+    font-size: 25px;
+}
